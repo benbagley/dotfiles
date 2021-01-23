@@ -1,11 +1,11 @@
 # /bin/bash
 
-sudo apt install nodejs yarn zsh alacritty python pavucontrol
+sudo pacman -Sy nodejs yarn zsh alacritty python pavucontrol yay base-devel
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # snapd
-sudo apt update
-sudo apt install snapd
+sudo pacman -Syu
+yay -S snapd
 sudo snap install discord
 
 # setup KVMs
@@ -20,15 +20,12 @@ sudo service bluetooth start
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.zshrc
 echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.zshrc
-sudo apt-get install build-essential
 brew install gcc
 
 # Install spotify
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key add - 
-echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
-sudo apt-get update && sudo apt-get install spotify-client
-sudo chmod a+wr /usr/share/spotify
-sudo chmod a+wr /usr/share/spotify/Apps -R
+sudo pacman -Sy && yay -S spotify
+sudo chmod a+wr /opt/spotify
+sudo chmod a+wr /opt/spotify/Apps -R
 
 brew install khanhas/tap/spicetify-cli
 
@@ -45,7 +42,13 @@ cd ..
 
 spicetify backup apply
 spicetify config current_theme Dribbblish
-spicetify config color_scheme Dracula
+spicetify config color_scheme Horizon
+
+cd "$(dirname "$(spicetify -c)")/Themes/Dribbblish"
+cp dribbblish.js ../../Extensions
+spicetify config extensions dribbblish.js
+cd
+
 spicetify apply
 
 # make zsh default
