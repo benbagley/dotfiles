@@ -3,9 +3,15 @@
 sudo pacman -Sy nodejs yarn zsh alacritty python pavucontrol yay base-devel
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
+# Install paru
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd
+
 # snapd
 sudo pacman -Syu
-yay -S snapd
+paru -S snapd
 sudo snap install discord
 
 # setup KVMs

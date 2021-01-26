@@ -1,10 +1,10 @@
 # dotfiles
-Here is a list of setup scripts https://gist.github.com/benbagley/8f69dcccd017361d2c68db09bd99b793
+Here are scripts to setup dotfiles https://gist.github.com/benbagley/8f69dcccd017361d2c68db09bd99b793
 
 How to use and setup dotfiles
 https://www.atlassian.com/git/tutorials/dotfiles
 
-### Setup
+### Setup environment
 
 1. Install Ubuntu or another distro (using popOS)
 2. Run `install` script
