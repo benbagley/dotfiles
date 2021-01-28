@@ -1,9 +1,4 @@
 # dotfiles
-Here are scripts to setup dotfiles https://gist.github.com/benbagley/8f69dcccd017361d2c68db09bd99b793
-
-How to use and setup dotfiles
-https://www.atlassian.com/git/tutorials/dotfiles
-
 ### Setup environment
 
 1. Install Ubuntu or another distro (using popOS)
@@ -14,6 +9,8 @@ https://www.atlassian.com/git/tutorials/dotfiles
 6. Logout and back in again
 
 ###########################################################
+
+### Setup dotfiles
 
 ### From scratch
 > git init --bare $HOME/.dotfiles
