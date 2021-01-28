@@ -16,28 +16,28 @@ https://www.atlassian.com/git/tutorials/dotfiles
 ###########################################################
 
 ### From scratch
-git init --bare $HOME/.dotfiles
-alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-config config --local status.showUntrackedFiles no
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
-cd .dotfiles
-config checkout -b main
-config commit -am "inital commit"
-config push -u origin main
+> git init --bare $HOME/.dotfiles
+> alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+> config config --local status.showUntrackedFiles no
+> echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+> echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+> cd .dotfiles
+> config checkout -b main
+> config commit -am "inital commit"
+> config push -u origin main
 
 ### Setting up files on a new system
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
-echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
-source ~/.zshrc
-git clone --bare git@github.com:benbagley/dotfiles.git $HOME/.dotfiles
-config config --local status.showUntrackedFiles no
-config checkout
+> echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.bashrc
+> echo "alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'" >> $HOME/.zshrc
+> source ~/.zshrc
+> git clone --bare git@github.com:benbagley/dotfiles.git $HOME/.dotfiles
+> config config --local status.showUntrackedFiles no
+> config checkout
 
 ### Pushing and adding files (example)
-config status
-config add .vimrc
-config commit -m "Add vimrc"
-config add .bashrc
-config commit -m "Add bashrc"
-config push
+> config status
+> config add .vimrc
+> config commit -m "Add vimrc"
+> config add .bashrc
+> config commit -m "Add bashrc"
+> config push
