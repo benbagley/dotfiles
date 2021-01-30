@@ -28,5 +28,10 @@ echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.zshrc
 echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.zshrc
 brew install gcc
 
+# Restore Budgie settings and panel
+cd ~/Documents/dconf-backups/
+dconf load / < full-backup
+cd
+
 # make zsh default
 chsh -s $(which zsh)
