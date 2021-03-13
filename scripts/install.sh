@@ -3,19 +3,19 @@
 sudo pacman -Sy nodejs yarn zsh alacritty python pavucontrol yay base-devel
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# Install paru
+# Install paru to replace pacman
 git clone https://aur.archlinux.org/paru.git
 cd paru
 makepkg -si
 cd
 
 # snapd
-sudo pacman -Syu
+sudo paru -Syu
 paru -S snapd
 sudo snap install discord
 
 # setup KVMs
-sudo apt install quemu ovmf virt-manager dnsmasq ebtables libvirt-daemon-driver-lxc
+yay -S quemu ovmf virt-manager dnsmasq ebtables libvirt-daemon-driver-lxc librewolf brave
 virt-manager -c 'qemu:///session'
 
 # bluetooth
@@ -27,11 +27,6 @@ sudo service bluetooth start
 echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.zshrc
 echo "eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >> ~/.zshrc
 brew install gcc
-
-# Restore Budgie settings and panel
-cd ~/Documents/dconf-backups/
-dconf load / < full-backup
-cd
 
 # make zsh default
 chsh -s $(which zsh)
